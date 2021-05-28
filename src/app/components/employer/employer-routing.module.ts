@@ -8,10 +8,21 @@ import { LivraisonListComponent } from './livraison-list/livraison-list.componen
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'accueil', component: HomeThreeComponent },
- // {path: ':id', component: EmployerDetailComponent},
-  {path: 'employer-edit/:id', component: EmployerEditComponent },
+  //{path: 'employer-edit/:id', component: EmployerEditComponent },
   {path: 'livraison',component: LivraisonListComponent}
 ];
+/*
+const routes: Routes = [
+  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
+  { path: 'accueil', component: HomeThreeComponent },
+ // {path: ':id', component: ClientDetailComponent},
+  {path: 'client-edit/:id', component: ClientEditComponent },
+  {path: 'commande',component: CommandeNewComponent}
+];
+
+
+
+*/ 
 
 
 @NgModule({

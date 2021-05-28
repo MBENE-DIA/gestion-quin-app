@@ -21,6 +21,7 @@ import { TeamComponent } from '../pages/team/team.component';
 import { produitRoutes } from './produit/produit.route';
 import { EmployerListComponent } from './employer/employer-list/employer-list.component';
 import { LivraisonListComponent } from './livraison/livraison-list/livraison-list.component';
+import { CommandeListComponent } from './commande/commande-list/commande-list.component';
 const routes: Routes = [
 //{ path: '', redirectTo: 'accueil', pathMatch: 'full' },
 { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
@@ -40,7 +41,8 @@ const routes: Routes = [
     {path: 'robinet-cuisine', component: TeamTwoComponent},
     produitRoutes,
     {path: 'employer', component: EmployerListComponent},
-    {path: 'livraision', component: LivraisonListComponent}
+    {path: 'livraision', component: LivraisonListComponent},
+    {path: 'commande-list', component: CommandeListComponent}
 
 ];
 

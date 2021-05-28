@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  //urlSrvApi: "https://gestion-pos-dernier-version.herokuapp.com"
   urlSrvApi : "http://localhost:9898"
 // urlSrvApi :'https://gestion-api.herokuapp.com'
 };

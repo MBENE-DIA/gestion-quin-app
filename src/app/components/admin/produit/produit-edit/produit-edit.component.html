@@ -1,1 +1,63 @@
-<p>produit-edit works!</p>
+<div class="contact-section">
+    <div class="container">
+        <div class="contact-area">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact-text">
+                        <div class="section-head">
+                            <h2><span>Formulaire Ajout Produit</span></h2>
+                            
+                        </div>
+
+                        <div class="contact-form" [hidden]="submitted">
+                            <form id="contactForm" (ngSubmit)="onSubmit()">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="nom" id="nom" class="form-control" required [(ngModel)]="prod.nom" placeholder="Nom Produit">
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-md-12 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="prix" id="prix" class="form-control" [(ngModel)]="prod.prixUnitaire" placeholder="Prix Unitaire">
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-md-12 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="file" name="photo" id="photo" (change)="onFileChanged($event)" class="form-control" [(ngModel)]="prod.photo" placeholder="Prix Unitaire">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="qte" id="qte" class="form-control" [(ngModel)]="prod.quantite" placeholder="Quantite">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-6">
+                                        <div class="form-group">
+                                            <select name="categorie" class="form-control" required=""
+                                            [(ngModel)]="prod.categorie">
+                                         <option *ngFor="let cat of categories" [value]="cat.value"> {{cat.label}}
+                                         </option>
+                                        </select>
+                                       </div> 
+                                    </div>
+                                     <br>
+                                    
+                                    <div class="col-lg-12 col-md-12">
+                                        <button  type="submit" class="btn btn-success">Enregistrer</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div [hidden]="!submitted">
+                            <h4>You submitted successfully!</h4>
+                            
+                          </div>
+                    </div>               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

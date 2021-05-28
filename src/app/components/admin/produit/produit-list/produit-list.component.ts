@@ -8,6 +8,7 @@ import {
 } from "../produit.columns";
 import { ClientService } from '../../client/client.service';
 import { Client } from 'src/app/components/client/client';
+import { User } from '../../user/user';
 
 @Component({
   selector: 'app-produit-list',
@@ -17,7 +18,7 @@ import { Client } from 'src/app/components/client/client';
 export class ProduitListComponent implements OnInit {
   @Input() produits: Produit[];
   @Output() productAdded = new EventEmitter();
-  
+  user: User | any;
    selectedPoduits: Produit[] = [];
   selectedPoduit: Produit;
   cols: any[];

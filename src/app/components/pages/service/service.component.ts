@@ -30,6 +30,18 @@ export class ServiceComponent implements OnInit {
     }
     );
   }
+  deleteProduit(id:number): void {
+    this.produitSrv.deleteProduit(id).subscribe(
+      (response: void) => {
+        console.log(response);
+        this.getAllProduits();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+  
   // getAllProduitss(){
   //   this.produitSrv.getAllProduitSa().subscribe((response: Produit[])=>{
   //     this.produits = response;

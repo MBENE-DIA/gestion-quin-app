@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Produit } from '../produit';
 import { ProduitService } from '../produit.service';
 
@@ -34,7 +35,7 @@ export class ProduitNewComponent implements OnInit {
   ];
 
 
-  constructor( private produitSrv: ProduitService,
+  constructor( private produitSrv: ProduitService,public toastSrv: ToastrService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -57,7 +58,7 @@ save(){
   formData.append('quantite',this.prod.quantite);
   formData.append('categorie',this.prod.categorie);
   this.produitSrv.ajouterProduit(formData).subscribe((data: Produit) =>{
-    //this.toastSrv.showSuccess('Enregistrement reussi');
+     this.toastSrv.success('Enregistrement reussi');
     this.router.navigate(['/produit']);  
   }, (error: HttpErrorResponse)=>{
     // this.message = 'Eregistrement non reussi';

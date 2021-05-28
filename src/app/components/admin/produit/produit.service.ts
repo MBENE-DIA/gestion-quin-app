@@ -21,8 +21,8 @@ export class ProduitService {
 
     return this.http.post<Produit>(this.urlSrvApi+'/api/produit/ajouter',formData);
   }
-  public updateProduit(prod:Produit):Observable<Produit>{
-    return this.http.put<Produit>(this.urlSrvApi+'/api/produit/update',prod);
+  public updateProduit(formData: FormData):Observable<Produit>{
+    return this.http.put<Produit>(this.urlSrvApi+'/api/produit/update/',formData);
   }
   public findById(id:number):Observable<Produit>{
     return this.http.get<Produit>(this.urlSrvApi+'/api/produit/find/'+id);

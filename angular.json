@@ -38,6 +38,7 @@
               "src/assets/css/flaticon.css",
               "src/assets/css/style.scss",
               "src/assets/css/responsive.scss",
+            "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss"
             ],
             "scripts": [

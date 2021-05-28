@@ -11,11 +11,18 @@ import { UserService } from '../../admin/user/user.service';
 export class HeaderComponent implements OnInit {
 
   user: User | any;
+
+  email: String | any;
   constructor(public userService: UserService, public router: Router) {}
 
   ngOnInit(): void {
-    this.user = localStorage.getItem('user');
-    console.log('user ' + this.user);
+  
+    this.email = localStorage.getItem('email');
+    console.log('email : ' + this.email);
+    this.userService.getUserEmail(this.email).toPromise<User>().then((data) => {
+      this.user = data;
+      console.log(this.user);
+    });
   }
 
   logOut(): void{

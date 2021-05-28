@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Commande } from '../../admin/commande/commande';
 
 @Component({
   selector: 'app-commande-new',
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./commande-new.component.scss']
 })
 export class CommandeNewComponent implements OnInit {
-
+  com=new Commande();
+  submitted = false;
+  selectedFile: File;
+ 
   constructor() { }
 
   ngOnInit(): void {

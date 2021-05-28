@@ -34,6 +34,17 @@ export class PricingComponent implements OnInit {
     }
     );
   }
+  deleteProduit(id:number): void {
+    this.produitSrv.deleteProduit(id).subscribe(
+      (response: void) => {
+        console.log(response);
+        this.getAllProduits();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
 
 
 
